@@ -1,0 +1,4 @@
+---
+- name: "TODO: Autologin tasks"
+  debug:
+    msg: "TODO: Autologin tasks"

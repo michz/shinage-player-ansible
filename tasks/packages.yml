@@ -1,0 +1,12 @@
+---
+- name: "Install system packages"
+  apt:
+    name: "{{ shinage_system_packages }}"
+    state: latest
+    install_recommends: no
+
+- name: "Install ui packages"
+  apt:
+    name: "{{ shinage_ui_packages }}"
+    state: latest
+    install_recommends: no

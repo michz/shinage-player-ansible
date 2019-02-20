@@ -1,0 +1,21 @@
+---
+- hosts: all
+  vars_files:
+    - vars/system.yml
+
+  become: yes
+
+  pre_tasks:
+  - name: Update apt package list
+    apt:
+      update_cache: yes
+
+  roles:
+    - oefenweb.locales
+
+  tasks:
+  - import_tasks: tasks/packages.yml
+    when: shinage_base_install_packages
+  - import_tasks: tasks/base.yml
+  - import_tasks: tasks/cronjobs.yml
+    when: shinage_base_install_cronjobs

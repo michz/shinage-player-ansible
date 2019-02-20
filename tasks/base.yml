@@ -1,0 +1,18 @@
+---
+- name: "Configure hdparm"
+  copy:
+    src: hdparm.conf
+    dest: /etc/hdparm.conf
+    owner: root
+    group: root
+    mode: 0644
+  when: shinage_base_hdparm_disable_writecache
+
+# @TODO Replace by systemd or other
+#- name: "Configure swappiness"
+#  lineinfile:
+#    path: /etc/rc.local
+#    line: 'echo -n "{{ shinage_base_swappiness }}" > /proc/sys/vm/swappiness'
+#    state: present
+#    insertbefore: "^exit.*"
+#  when: shinage_base_configure_swappiness
