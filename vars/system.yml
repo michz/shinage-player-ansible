@@ -6,6 +6,13 @@ shinage_base_swappiness: 0
 
 shinage_install_player_online_only: true
 
+shinage_base_create_user: true
+shinage_base_user: kiosk
+shinage_base_autologin_user: true
+
+shinage_chromium_binary: chromium-browser     # is "chromium" on debian
+
+shinage_screen_guid: "1a145611-e204-4c50-b7ca-0e337cc0f64f"
 shinage_online_player_url: "https://player.shinage.org/player.html"
 shinage_server_url: "https://localhost:44301"
 #shinage_online_player_url: "https://player.shinage.org/player.html?current_presentation_url=https://localhost:44301/screen-remote/current-for/1a145611-e204-4c50-b7ca-0e337cc0f64f"
@@ -26,6 +33,7 @@ shinage_ui_packages:
   - unclutter
   - xinit
   - xserver-xorg-core
+  - xserver-xorg-legacy             # needed for ubuntu 18.04, at least in virtual box
   - xserver-xorg-video-fbdev
   - xserver-xorg-video-vesa
 #  - xserver-xorg-video-modesetting  # removed in ubuntu 18.04 and moved to xserver-xorg-core
